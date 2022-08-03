@@ -14,7 +14,7 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
-
+import * as directives from '@/directives'
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -34,7 +34,9 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
-
+for(let key in directives){
+  Vue.directive(key,directives[key])
+}
 new Vue({
   el: '#app',
   router,

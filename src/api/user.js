@@ -11,4 +11,14 @@ export function login(data) {
     data
   })
 }
-
+export const getuserinfoApi = () => {
+  return request({
+    url: '/sys/profile',
+    method: 'POST',
+  })
+}
+export const getUserDetail = (id) => {
+  return request({
+    url: '/sys/user/' + id,
+  })
+}
